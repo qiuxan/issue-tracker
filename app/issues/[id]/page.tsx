@@ -1,8 +1,13 @@
 import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
+import dynamic from "next/dynamic";
 import { Card, Flex, Heading, Text } from "@radix-ui/themes";
 import IssueStatusBadge from "@/app/components/IssueStatusBadge";
 import ReactMarkdown from "react-markdown";
+
+const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
+  ssr: false,
+});
 interface Props {
   params: { id: string };
 }
