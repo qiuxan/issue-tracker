@@ -7,6 +7,7 @@ import IssueDetails from "./IssueDetails";
 import DeleteIssueButton from "./DeleteIssueButton";
 import { getServerSession } from "next-auth";
 import authOptions from "@/app/auth/authOptions";
+import AssigneeSelect from "./AssigneeSelect";
 
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
   ssr: false,
@@ -31,6 +32,7 @@ const IssueDetailPage = async ({ params }: Props) => {
       {session && (
         <Box>
           <Flex direction="column" gap="4">
+            <AssigneeSelect />
             <EditIssueButton issueID={issue.id} />
             <DeleteIssueButton issueID={issue.id} />
           </Flex>
