@@ -32,7 +32,7 @@ const IssueDetailPage = async ({ params }: Props) => {
       {session && (
         <Box>
           <Flex direction="column" gap="4">
-            <AssigneeSelect />
+            <AssigneeSelect issue ={issue}/>
             <EditIssueButton issueID={issue.id} />
             <DeleteIssueButton issueID={issue.id} />
           </Flex>
